@@ -13,7 +13,7 @@ SRCS =  main.c \
 
 OBJS = $(SRCS:.c=.o)
 
-CC = cc -Wall -Wextra -Werror #-fsanitize=address
+CC = cc -O3 -Wall -Wextra -Werror
 
 RM = rm -f
 
@@ -21,7 +21,7 @@ RM = rm -f
 	$(CC) -Imlx -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -lm -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJS) -O3 -lm -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 all : $(NAME)
 
